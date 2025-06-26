@@ -6,9 +6,14 @@
     <script>
       window.onload = () => {
         if (window.Telegram && Telegram.WebApp) {
-          Telegram.WebApp.close();
+          Telegram.WebApp.ready(); // Initialize
+          Telegram.WebApp.close(); // This will close the Telegram Mini App
         } else {
-          window.close(); // fallback for browser
+          console.warn("Not inside Telegram WebApp");
+          // Optional fallback for testing in browser
+          setTimeout(() => {
+            alert("This only works inside Telegram.");
+          }, 1000);
         }
       };
     </script>
