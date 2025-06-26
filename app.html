@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Closing...</title>
+    <script>
+      window.onload = () => {
+        if (window.Telegram && Telegram.WebApp) {
+          Telegram.WebApp.close();
+        } else {
+          window.close(); // fallback for browser
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p>Closing...</p>
+  </body>
+</html>
